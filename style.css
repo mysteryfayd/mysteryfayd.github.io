@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'Roboto Regular';
-    src: url('Roboto-Regular.eot');
+    src: url('fonts/Roboto-Regular.eot');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Helvetica Neue Cyr Roman';
-    src: url('HelveticaNeueCyr-Roman.eot');
+    src: url('fonts/HelveticaNeueCyr-Roman.eot');
     font-weight: normal;
     font-style: normal;
 }
@@ -16,10 +16,10 @@ body {
     background: #f6f5f3; 
     font-family: 'Roboto Regular', sans-serif;
 }
+
 body,div,h1,h2,h3,h4,h5,h6,p { padding: 0; margin: 0; }
-ul { padding-inline-start: 15px; list-style-type: none; margin: 0 }
+ul { -webkit-padding-start: 15px; padding-inline-start: 15px; list-style-type: none; margin: 0 }
 li { padding: 5px 0; border-bottom: 1px dotted #ffdb4d }
-li:last-child { border-bottom: none}
 h1 { visibility: hidden; margin: 10px 0; font-weight: normal}
 h2 { margin-bottom: 20px; }
 
@@ -109,22 +109,13 @@ section {
 section:last-child {
     margin-bottom: 0;
 }
-.lesson-all-blocks {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-}
 .lesson-block-wrapper {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    /* display: flex; */
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    /* justify-content: space-between; */
     -webkit-box-align: stretch;
         -ms-flex-align: stretch;
             align-items: stretch;
@@ -132,6 +123,16 @@ section:last-child {
         align-content: stretch;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
+}
+.lesson-all-blocks {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+}
+.lesson-block-wrapper ul, .lesson-block-wrapper > ul > li {
+    padding: 0;
 }
 .lesson {
     font-family: 'Helvetica Neue Cyr Roman', sans-serif;
@@ -189,6 +190,9 @@ section:last-child {
 .lesson__plan {
     padding: 20px;
     font-size: 14px;
+}
+.lesson__plan li:last-child { 
+    border-bottom: none
 }
 
 /* completed lessons */
@@ -277,9 +281,12 @@ section:last-child {
 /* MOBILE */
 @media (min-width: 320px) and (max-width: 374px) {
     h1 {
-        font-size: 20px;
+        font-size: 10px;
+    }
+    h2 {
+        margin: 0 0 10px 0 !important;
+        font-size: 16px;
         text-align: center;
-        margin-bottom: 10px;
     }
     ul {
         -webkit-padding-start: 0;
@@ -299,7 +306,7 @@ section:last-child {
         display: block;
     }
     .lesson {
-        margin: 0 10px 10px 0;
+        margin: 0 10px 0 0;
     }
     .lesson:nth-child(3n) {
         margin-right: 10px;
@@ -346,16 +353,16 @@ section:last-child {
                 flex: 0 0 260px;;
         height: 100%;
     }
-    .m-b--0 {
-        margin-bottom: 10px !important;
-    }
 }
 
 @media (min-width: 375px) and (max-width: 767px) {
     h1 {
+        font-size: 10px;
+    }
+    h2 {
+        margin: 0 0 10px 0 !important;
         font-size: 20px;
         text-align: center;
-        margin-bottom: 15px;
     }
     ul {
         -webkit-padding-start: 0;
@@ -372,13 +379,13 @@ section:last-child {
         padding: 10px !important;
     }
     .lesson-block-title {
-        padding-top: 10px;
+        padding-top: 5px;
     }
     .lesson-block-wrapper {
         display: block;
     }
     .lesson {
-        margin: 0 10px 20px 0;
+        margin: 0 10px 0 0;
     }
     .lesson:nth-child(3n) {
         margin-right: 10px;
@@ -392,9 +399,6 @@ section:last-child {
     }
     .lesson__day {
         font-size: 25px;
-    }
-    .m-b--0 {
-        margin-bottom: 20px !important;
     }
     .lesson-block-wrapper {
         display: -webkit-box;
@@ -415,9 +419,10 @@ section:last-child {
     .lesson {
         white-space: normal;
         vertical-align: top; 
-        /* display: inline-block; */
         width: 280px;
-        /* height: 100%; */
+    }
+    .m-b--20 {
+        margin-bottom: 0 !important;
     }
 
 }
